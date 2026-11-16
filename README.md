@@ -4,6 +4,8 @@ A tiny dark-mode landing page that lists every local dev server running on this 
 
 Run `python3 localhosts.py`, then open **http://localhost:9999**.
 
+![The dashboard listing four local dev servers, each with its page title, port, git branch, program and folder](home.png)
+
 ## What it shows
 
 - Each server that's listening and answers with a real page, labeled with the page's own title and the project folder it was started from.
