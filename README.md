@@ -45,3 +45,7 @@ To use a different port, change `PORT` at the top of `localhosts.py`.
 - **Python 3.8 or newer.** It uses only Python's standard library, so there's nothing to install.
 - **Git**, for the branch line. It calls `/usr/bin/git`, which macOS offers to install with the Xcode command line tools the first time it's used. Without git, the page still works and leaves the branch line out.
 - **Port 9999 free.** Otherwise it stops with "Address already in use".
+
+## License
+
+MIT, see [LICENSE](LICENSE). The Swiss Minimal kit files in `swiss/kit/` are MIT too. The fonts in `swiss/fonts/` are under the SIL Open Font License 1.1, each with its license file beside it.
