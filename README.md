@@ -18,7 +18,7 @@ No dependencies: just Python 3 and macOS's built-in `lsof`. See "Requirements".
 
 ## Styling
 
-The page uses the [Swiss Minimal](../swiss-minimal) design kit in dark mode with the azure accent: a page title, then the kit's list row section, numbered with accent number circles.
+The page uses the [Swiss Minimal](https://www.swissminimal.ch) design kit in dark mode with the azure accent: a page title, then the kit's list row section, numbered with accent number circles.
 
 - `swiss/kit/theme.css` and `swiss/kit/fonts.css`: copied from the kit, unchanged. The kit runs as plain CSS here, with no Tailwind.
 - `swiss/fonts/`: Overused Grotesk and Source Code Pro, each with its license (SIL OFL 1.1).
