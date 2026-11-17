@@ -11,7 +11,7 @@ Run `python3 localhosts.py`, then open **http://localhost:9999**.
 - Each server that's listening and answers with a real page, labeled with the page's own title and the project folder it was started from.
 - The git branch checked out in that folder ("on main"), when the folder is in a git repository.
 - Servers that return an error (like "not found") or don't answer within 2 seconds are hidden.
-- The page refreshes itself every 5 seconds. To change that, edit `content=5` in `localhosts.py`.
+- Press **Refresh** under the title (or reload the page) to rescan.
 - To also see non-dev apps (Adobe, Control Center, etc.) and the servers with no page, open **http://localhost:9999/?all=1**.
 
 It only checks common dev tools: Node, Python, Ruby, PHP, Deno, Bun, Java, Go, Hugo, Jekyll, Caddy, nginx and similar. To add another, edit `DEV_COMMANDS` in `localhosts.py`.

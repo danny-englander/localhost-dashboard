@@ -2,7 +2,7 @@
 """Tiny landing page listing every local dev server that's listening.
 
 Run:  python3 localhosts.py      then open http://localhost:9999
-Refresh the page to rescan. Add ?all=1 to include non-dev apps.
+Press Refresh (or reload the page) to rescan. Add ?all=1 to include non-dev apps.
 """
 import getpass, html, os, re, subprocess, urllib.request, urllib.error
 from concurrent.futures import ThreadPoolExecutor
@@ -93,9 +93,11 @@ def page(show_all):
   <span class="num small muted server-num">{num_mark(len(rows) + 1)}</span>
   <span class="server-body">
     <a class="title server-link" href="http://localhost:{port}" target="_blank" rel="noopener">{html.escape(title or name)}<span class="sr-only"> (opens in a new tab)</span></a>
-    <span class="small muted server-meta">{meta}</span>
+    <span class="row-meta muted server-meta">{meta}</span>
   </span>
-  <span class="server-end" aria-hidden="true">↗</span>
+  <span class="server-end">
+    <a class="row-arrow" href="http://localhost:{port}" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><svg viewBox="0 0 20 20"><path d="M3 10h13M11 5l5 5-5 5" /></svg></a>
+  </span>
 </li>""")
     count = f"{len(rows)} running" if rows else "Nothing running"
     return f"""<!doctype html>
@@ -103,7 +105,6 @@ def page(show_all):
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="refresh" content="5">
 <title>Local servers</title>
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="preload" href="/swiss/fonts/OverusedGrotesk-VF.woff2" as="font" type="font/woff2" crossorigin>
@@ -116,6 +117,10 @@ def page(show_all):
   <header class="page-title"><h1 class="page-title-text">Local servers on {html.escape(getpass.getuser())}</h1></header>
   <section class="rule-thick servers" aria-labelledby="servers">
     <div class="servers-head">
+      <a class="btn-outline btn-outline--tertiary refresh" href="{"/?all=1" if show_all else "/"}">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21 12a9 9 0 1 1-2.64-6.36"/><path d="M21 3v6h-6"/></svg>
+        Refresh
+      </a>
       {f'<p class="num small muted servers-range">01–{len(rows):02d}</p>' if rows else ""}
       <h2 class="h2" id="servers">{count}</h2>
     </div>
