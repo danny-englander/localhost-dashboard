@@ -42,3 +42,7 @@ ul { list-style: none; }
 
 /* Refresh button just under the thick rule, above the count: icon and label, no underline */
 .refresh { gap: 0.5rem; justify-self: start; margin-bottom: 1rem; text-decoration: none; }
+
+/* Footer: the kit's site footer (its 2px rule matches the one under the title), holding one byline */
+.byline { margin: 0; }
+.github-icon { display: inline-block; width: 1.1em; height: 1.1em; margin-right: 0.4em; vertical-align: -0.15em; }
