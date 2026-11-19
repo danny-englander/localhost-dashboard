@@ -47,7 +47,7 @@ ul { list-style: none; }
 .byline { margin: 0; }
 .github-icon { display: inline-block; width: 1.1em; height: 1.1em; margin-right: 0.4em; vertical-align: -0.15em; }
 
-/* Icons are the font's own glyphs (▶ ■ ● ○ ◐ ↻), so they share the text's color and weight */
+/* Icons are the font's own glyphs (▶ ■ ● ◐ × ↻), so they share the text's color and weight */
 .glyph { display: inline-block; line-height: 1; }
 
 /* Projects: the kit's card grid, one card per project in projects.json. The kit's card has the
@@ -56,6 +56,9 @@ ul { list-style: none; }
 .projects .servers-head { padding-bottom: 2rem; }
 .project-problem { padding-bottom: 1.5rem; }
 .project-state[data-state="on"] .glyph { color: var(--accent-text); }
+/* Stopped (and stopped with an error) in the kit's vermilion for small marks on dark (its dark
+   --accent-bright). This page's accent is azure, so the value is written out here. */
+.project-state[data-state="off"] .glyph { color: #ff5b3c; }
 .project-details { overflow-wrap: anywhere; }
 .project-shot {
   grid-column: 2;

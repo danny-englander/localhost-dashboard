@@ -211,7 +211,7 @@ def project_rows(projects, ports, dirs, query):
         elif not os.path.isdir(project["dir"]):
             state = f'{glyph("×")} Folder not found'
         else:
-            state = f'{glyph("○")} Stopped'
+            state = f'{glyph("●")} Stopped'
         name = html.escape(project["name"])
         title = (f'<a href="http://localhost:{live[0]}" target="_blank" rel="noopener">{name}'
                  f'<span class="sr-only"> (opens in a new tab)</span></a>' if live else name)

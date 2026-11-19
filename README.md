@@ -20,7 +20,7 @@ No dependencies: just Python 3 and macOS's built-in `lsof`. See "Requirements".
 
 ## Projects: start and stop your dev servers
 
-List your projects in `~/.config/localhosts/projects.json` and the page gets a **Projects** section under the running servers, one Swiss Minimal card per project. Each card has a **▶ Start** or **■ Stop** button, its status (● running, ◐ starting, ○ stopped) and a **Log** button. Without the file, the section doesn't appear.
+List your projects in `~/.config/localhosts/projects.json` and the page gets a **Projects** section under the running servers, one Swiss Minimal card per project. Each card has a **▶ Start** or **■ Stop** button, its status (● running in the accent color, ◐ starting, ● stopped in vermilion) and a **Log** button. Without the file, the section doesn't appear.
 
 ```json
 {
@@ -71,7 +71,7 @@ The page uses the [Swiss Minimal](https://www.swissminimal.ch) design kit in dar
 - `swiss/kit/theme.css` and `swiss/kit/fonts.css`: copied from the kit, unchanged. The kit runs as plain CSS here, with no Tailwind.
 - `swiss/fonts/`: Overused Grotesk and Source Code Pro, each with its license (SIL OFL 1.1).
 - `site.css`: the list row grid, which the kit writes with Tailwind classes, written out with the kit's tokens.
-- Icons are glyphs from Overused Grotesk itself (▶ ■ ● ○ ◐ ↻ ↗), so they match the type. The GitHub logo in the footer is the one SVG.
+- Icons are glyphs from Overused Grotesk itself (▶ ■ ● ◐ × ↻ ↗), so they match the type. The GitHub logo in the footer is the one SVG.
 - `favicon.svg`: the kit's square favicon.
 
 To pick up a newer version of the kit, copy those two CSS files and the fonts over again.
