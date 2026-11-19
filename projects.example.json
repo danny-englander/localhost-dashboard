@@ -1,0 +1,16 @@
+{
+  "projects": [
+    {
+      "name": "Marketing site",
+      "dir": "~/Projects/marketing-site",
+      "command": "npm run dev",
+      "port": 4321,
+      "screenshot": "screenshots/marketing-site.png"
+    },
+    {
+      "name": "API",
+      "dir": "~/Projects/api",
+      "command": "uv run uvicorn app:app --reload --port 8000"
+    }
+  ]
+}

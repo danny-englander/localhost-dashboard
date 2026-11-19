@@ -46,3 +46,23 @@ ul { list-style: none; }
 /* Footer: the kit's site footer (its 2px rule matches the one under the title), holding one byline */
 .byline { margin: 0; }
 .github-icon { display: inline-block; width: 1.1em; height: 1.1em; margin-right: 0.4em; vertical-align: -0.15em; }
+
+/* Icons are the font's own glyphs (▶ ■ ● ○ ◐ ↻), so they share the text's color and weight */
+.glyph { display: inline-block; line-height: 1; }
+
+/* Projects: the kit's card grid, one card per project in projects.json. The kit's card has the
+   number in a 3rem column and everything else in the second column; the extras here follow it. */
+.projects { margin-top: 4rem; }
+.projects .servers-head { padding-bottom: 2rem; }
+.project-problem { padding-bottom: 1.5rem; }
+.project-state[data-state="on"] .glyph { color: var(--accent-text); }
+.project-details { overflow-wrap: anywhere; }
+.project-shot {
+  grid-column: 2;
+  display: block; width: 100%; height: auto;
+  margin-top: 1rem;
+  border: 1px solid var(--rule);
+}
+.project-actions { grid-column: 2; display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1rem; }
+.project-actions form { margin: 0; }
+.project-actions .btn-outline { gap: 0.5rem; text-decoration: none; }
