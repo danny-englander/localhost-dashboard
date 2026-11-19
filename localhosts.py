@@ -132,9 +132,13 @@ def log_path(slug):
 
 
 def project_ports(project, ports, dirs):
-    """The ports a project is listening on: servers started in its folder, plus its "port" if given."""
-    return sorted(port for port, (pid, _) in ports.items()
-                  if dirs.get(pid) == project["dir"] or port == project["port"])
+    """The ports a project is listening on. With a "port", just that one. Without, dev servers
+    (DEV_COMMANDS) started in its folder: not, say, an editor or an AI agent open in the same folder,
+    which Stop would otherwise end too."""
+    if project["port"]:
+        return [project["port"]] if project["port"] in ports else []
+    return sorted(port for port, (pid, cmd) in ports.items()
+                  if dirs.get(pid) == project["dir"] and DEV_COMMANDS.match(cmd or ""))
 
 
 def find_nvmrc(folder):

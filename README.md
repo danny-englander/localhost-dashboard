@@ -33,7 +33,7 @@ List your projects in `~/.config/localhosts/projects.json` and the page gets a *
 
 - `dir` and `command` are required: the folder to run in and what you'd type there in a terminal.
 - `name` is what the page shows. Without it, the folder's name.
-- `port` is optional. A project counts as running when a server started in its folder is listening, or when something is listening on its `port`. Give the port if the server starts in a different folder, or to have Stop work on a server you started yourself in a terminal.
+- `port` is optional but best given when you know it. With it, the project is running when something is listening on that port, and Stop ends what's listening there. Without it, the project is running when a dev server (Node, Python and the other tools under "What it shows") started in its folder is listening; other programs open in the folder, like an editor or an AI agent, are left out so Stop never ends them.
 - `screenshot` is optional: an image shown on the project's card. A path relative to `projects.json`'s folder (`screenshots/site.png` is `~/.config/localhosts/screenshots/site.png`), or a full path. PNG, JPEG, WebP, GIF or AVIF. SVG isn't accepted, since an SVG can carry script that would run as the dashboard. A missing file shows "Screenshot not found" on the card.
 
 To start, copy [`projects.example.json`](projects.example.json) from this repository and edit it:
